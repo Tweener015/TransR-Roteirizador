@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransR - Roteirizador</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Biblioteca de Mapa Gratuita (Sem API Key) -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+</head>
+<body>
+
+<div class="dashboard">
+    <header class="header">
+        <h1>TransR</h1>
+        <div class="subtitle">LOGÍSTICA E ROTEIRIZAÇÃO</div>
+    </header>
+
+    <div id="input-area">
+        <div class="stop-wrapper origin">
+            <label>📍 PONTO DE PARTIDA (BASE)</label>
+            <input type="text" class="stop-input" id="origin" placeholder="Ex: Rua São Bento, Sorocaba">
+        </div>
+        
+        <div id="destinations-container">
+            <!-- Destinos entram aqui -->
+        </div>
+    </div>
+    
+    <div class="actions">
+        <button class="btn-add" onclick="addDest()">+ ADICIONAR DESTINO</button>
+        <button class="btn-optimize" onclick="organizarRota()">⚡ ORGANIZAR MELHOR ROTA</button>
+    </div>
+
+    <section id="result-area" style="display:none;">
+        <h3>Ordem de Entrega Sugerida:</h3>
+        <div id="route-list"></div>
+        <button class="btn-copy" onclick="copiarWhatsApp()">📲 COPIAR PARA WHATSAPP</button>
+    </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
